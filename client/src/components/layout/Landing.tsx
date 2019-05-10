@@ -11,6 +11,7 @@ export default function Landing() {
           "That was sick, let's try this one.",
           "Nice!!! Let's top it off with this last one."
         ]}
+        wait={4000}
       />
     </section>
   );

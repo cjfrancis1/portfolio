@@ -18,8 +18,4 @@ describe("<Landing />", () => {
     const section = findByElement(wrapper, "section");
     expect(section.length).toBe(1);
   });
-  test("renders child TypeWriter component with no issue", () => {
-    const TypeWriter = findByElement(wrapper, "TypeWriter");
-    expect(TypeWriter.length).toBe(1);
-  });
 });

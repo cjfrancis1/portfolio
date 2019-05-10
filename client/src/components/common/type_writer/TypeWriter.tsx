@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 
-interface ITypeWriterProps {
+export interface ITypeWriterProps {
   wait: number;
   words: string[];
 }
 
-interface ITypeWriterState {
+export interface ITypeWriterState {
   txt: string;
   wordIndex: number;
   isDeleting: boolean;
@@ -35,10 +35,8 @@ export default class TypeWriter extends Component<
   }
 
   type() {
-    // Curent index of word
-    const current = this.state.wordIndex % this.props.words.length;
     // Get full text of current word
-    const fullTxt = this.props.words[current];
+    const fullTxt = this.props.words[this.state.wordIndex];
 
     // Check if deleting
     if (this.state.isDeleting) {
@@ -72,7 +70,10 @@ export default class TypeWriter extends Component<
     } else if (this.state.isDeleting && this.state.txt === "") {
       // Move to next word
       this.setState(prevState => {
-        return { isDeleting: false, wordIndex: prevState.wordIndex + 1 };
+        return {
+          isDeleting: false,
+          wordIndex: (prevState.wordIndex + 1) % this.props.words.length
+        };
       });
       typeSpeed = 0;
     }
@@ -82,6 +83,10 @@ export default class TypeWriter extends Component<
   }
 
   render() {
-    return <p className="type-writer-text">{this.state.txt}</p>;
+    return (
+      <p className="type-writer-text" data-test="type-writer-text">
+        {this.state.txt}
+      </p>
+    );
   }
 }
