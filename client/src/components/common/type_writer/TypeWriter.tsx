@@ -11,6 +11,8 @@ export interface ITypeWriterState {
   isDeleting: boolean;
 }
 
+let timeout: number;
+
 export default class TypeWriter extends Component<
   ITypeWriterProps,
   ITypeWriterState
@@ -32,6 +34,10 @@ export default class TypeWriter extends Component<
 
   componentDidMount() {
     this.type();
+  }
+
+  componentWillUnmount() {
+    clearTimeout(timeout);
   }
 
   type() {
@@ -79,7 +85,7 @@ export default class TypeWriter extends Component<
     }
 
     // Keep calling type
-    setTimeout(this.type, typeSpeed);
+    timeout = window.setTimeout(this.type, typeSpeed);
   }
 
   render() {

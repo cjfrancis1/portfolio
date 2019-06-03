@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "../store";
 
-import Navbar from "./layout/Navbar";
+import Navbar from "./layout/navbar/Navbar";
 import Footer from "./layout/Footer";
 import Landing from "./layout/Landing";
 
