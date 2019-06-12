@@ -190,7 +190,7 @@ class NavDrawer extends React.Component<INavDrawerProps, INavDrawerState> {
                 classes={{
                   primary: `${classes.secondaryDark} ${classes.listItemText}`
                 }}
-                primary="About Us"
+                primary="About us"
               />
             </ListItem>
             <ListItem
@@ -202,7 +202,7 @@ class NavDrawer extends React.Component<INavDrawerProps, INavDrawerState> {
                 classes={{
                   primary: `${classes.secondaryDark} ${classes.listItemText}`
                 }}
-                primary="Request a Quote"
+                primary="Request a quote"
               />
             </ListItem>
             <ListItem
@@ -214,7 +214,7 @@ class NavDrawer extends React.Component<INavDrawerProps, INavDrawerState> {
                 classes={{
                   primary: `${classes.secondaryDark} ${classes.listItemText}`
                 }}
-                primary="Let's Chat"
+                primary="Let's chat"
               />
             </ListItem>
           </List>
